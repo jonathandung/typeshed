@@ -14,7 +14,7 @@ _K = TypeVar("_K")
 _V = TypeVar("_V")
 _P = ParamSpec("_P")
 
-_SupportsComparison: TypeAlias = SupportsDunderLE | SupportsDunderGE | SupportsDunderGT | SupportsDunderLT
+_SupportsComparison: TypeAlias = SupportsDunderLE[Any] | SupportsDunderGE[Any] | SupportsDunderGT[Any] | SupportsDunderLT[Any]
 
 @type_check_only
 class _SupportsInversion(Protocol[_T_co]):
