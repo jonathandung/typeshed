@@ -1,6 +1,18 @@
 import sys
-from _typeshed import (SupportsGetItem, SupportsMul, SupportsRMul, SupportsDunderGE, SupportsDunderGT, SupportsDunderLE,
-                       SupportsDunderLT, SupportsBool, SupportsAdd, SupportsRAdd, SupportsSub, SupportsRSub)
+from _typeshed import (
+    SupportsAdd,
+    SupportsBool,
+    SupportsDunderGE,
+    SupportsDunderGT,
+    SupportsDunderLE,
+    SupportsDunderLT,
+    SupportsGetItem,
+    SupportsMul,
+    SupportsRAdd,
+    SupportsRMul,
+    SupportsRSub,
+    SupportsSub,
+)
 from collections.abc import Callable, Container, Iterable, MutableMapping, MutableSequence, Sequence
 from operator import attrgetter as attrgetter, itemgetter as itemgetter, methodcaller as methodcaller
 from typing import Any, AnyStr, Protocol, SupportsAbs, SupportsIndex, TypeVar, overload, type_check_only
@@ -57,7 +69,7 @@ class _SupportsTrueDiv(Protocol[_T_contra, _T_co]):
     def __truediv__(self, other: _T_contra) -> _T_co: ...
 
 @type_check_only
-class _SupportsRTrueDiv(Protocol[_T_contra, _T_co]):    
+class _SupportsRTrueDiv(Protocol[_T_contra, _T_co]):
     def __rtruediv__(self, other: _T_contra) -> _T_co: ...
 
 @type_check_only
@@ -65,13 +77,13 @@ class _SupportsFloorDiv(Protocol[_T_contra, _T_co]):
     def __floordiv__(self, other: _T_contra) -> _T_co: ...
 
 @type_check_only
-class _SupportsRFloorDiv(Protocol[_T_contra, _T_co]):    
+class _SupportsRFloorDiv(Protocol[_T_contra, _T_co]):
     def __rfloordiv__(self, other: _T_contra) -> _T_co: ...
 
 @type_check_only
 class _SupportsMod(Protocol[_T_contra, _T_co]):
     def __mod__(self, other: _T_contra) -> _T_co: ...
-    
+
 @type_check_only
 class _SupportsRMod(Protocol[_T_contra, _T_co]):
     def __rmod__(self, other: _T_contra) -> _T_co: ...
