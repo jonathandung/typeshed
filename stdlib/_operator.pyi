@@ -15,7 +15,7 @@ from _typeshed import (
 )
 from collections.abc import Callable, Container, Iterable, MutableMapping, MutableSequence, Sequence
 from operator import attrgetter as attrgetter, itemgetter as itemgetter, methodcaller as methodcaller
-from typing import Any, AnyStr, Protocol, SupportsAbs, SupportsIndex, TypeVar, overload, type_check_only
+from typing import Any, Protocol, SupportsAbs, SupportsIndex, TypeVar, overload, type_check_only
 from typing_extensions import ParamSpec, TypeAlias, TypeIs
 
 _R = TypeVar("_R")
@@ -280,7 +280,16 @@ def ixor(a: _SupportsIXOr[_T_contra, _T_co], b: _T_contra, /) -> _T_co: ...
 if sys.version_info >= (3, 11):
     def call(obj: Callable[_P, _R], /, *args: _P.args, **kwargs: _P.kwargs) -> _R: ...
 
-def _compare_digest(a: AnyStr, b: AnyStr, /) -> bool: ...
+if sys.version_info >= (3, 12):
+    from collections.abc import Buffer
+    _B = TypeVar("_B", bound=Buffer)
+    @overload
+    def _compare_digest(a: str, b: str, /) -> bool: ...
+    @overload
+    def _compare_digest(a: _B, b: _B, /) -> bool: ...
+else:
+    from typing import AnyStr
+    def _compare_digest(a: AnyStr, b: AnyStr, /) -> bool: ...
 
 if sys.version_info >= (3, 14):
     def is_none(a: object, /) -> TypeIs[None]: ...
