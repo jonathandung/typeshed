@@ -282,11 +282,13 @@ if sys.version_info >= (3, 11):
 
 if sys.version_info >= (3, 12):
     from collections.abc import Buffer
+
     _B = TypeVar("_B", bound=Buffer)
     @overload
     def _compare_digest(a: str, b: str, /) -> bool: ...
     @overload
     def _compare_digest(a: _B, b: _B, /) -> bool: ...
+
 else:
     from typing import AnyStr
     def _compare_digest(a: AnyStr, b: AnyStr, /) -> bool: ...
