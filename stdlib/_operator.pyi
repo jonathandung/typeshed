@@ -122,55 +122,55 @@ class _SupportsRXOr(Protocol[_T_contra, _T_co]):
 
 @type_check_only
 class _SupportsIAdd(Protocol[_T_contra, _T_co]):
-    def __iadd__(self, other: _T_contra) -> _T_co: ...  # noqa: Y034
+    def __iadd__(self, other: _T_contra) -> _T_co: ...
 
 @type_check_only
 class _SupportsIAnd(Protocol[_T_contra, _T_co]):
-    def __iand__(self, other: _T_contra) -> _T_co: ...  # noqa: Y034
+    def __iand__(self, other: _T_contra) -> _T_co: ...
 
 @type_check_only
 class _SupportsILShift(Protocol[_T_contra, _T_co]):
-    def __ilshift__(self, other: _T_contra) -> _T_co: ...  # noqa: Y034
+    def __ilshift__(self, other: _T_contra) -> _T_co: ...
 
 @type_check_only
 class _SupportsIMod(Protocol[_T_contra, _T_co]):
-    def __imod__(self, other: _T_contra) -> _T_co: ...  # noqa: Y034
+    def __imod__(self, other: _T_contra) -> _T_co: ...
 
 @type_check_only
 class _SupportsIMul(Protocol[_T_contra, _T_co]):
-    def __imul__(self, other: _T_contra) -> _T_co: ...  # noqa: Y034
+    def __imul__(self, other: _T_contra) -> _T_co: ...
 
 @type_check_only
 class _SupportsIMatMul(Protocol[_T_contra, _T_co]):
-    def __imatmul__(self, other: _T_contra) -> _T_co: ...  # noqa: Y034
+    def __imatmul__(self, other: _T_contra) -> _T_co: ...
 
 @type_check_only
 class _SupportsIOr(Protocol[_T_contra, _T_co]):
-    def __ior__(self, other: _T_contra) -> _T_co: ...  # noqa: Y034
+    def __ior__(self, other: _T_contra) -> _T_co: ...
 
 @type_check_only
 class _SupportsIPow(Protocol[_T_contra, _T_co]):
-    def __ipow__(self, other: _T_contra) -> _T_co: ...  # noqa: Y034
+    def __ipow__(self, other: _T_contra) -> _T_co: ...
 
 @type_check_only
 class _SupportsIRShift(Protocol[_T_contra, _T_co]):
-    def __irshift__(self, other: _T_contra) -> _T_co: ...  # noqa: Y034
+    def __irshift__(self, other: _T_contra) -> _T_co: ...
 
 @type_check_only
 class _SupportsISub(Protocol[_T_contra, _T_co]):
-    def __isub__(self, other: _T_contra) -> _T_co: ...  # noqa: Y034
+    def __isub__(self, other: _T_contra) -> _T_co: ...
 
 @type_check_only
 class _SupportsITrueDiv(Protocol[_T_contra, _T_co]):
-    def __itruediv__(self, other: _T_contra) -> _T_co: ...  # noqa: Y034
+    def __itruediv__(self, other: _T_contra) -> _T_co: ...
 
 @type_check_only
 class _SupportsIXOr(Protocol[_T_contra, _T_co]):
-    def __ixor__(self, other: _T_contra) -> _T_co: ...  # noqa: Y034
+    def __ixor__(self, other: _T_contra) -> _T_co: ...
 
 @type_check_only
 class _SupportsIFloorDiv(Protocol[_T_contra, _T_co]):
-    def __ifloordiv__(self, other: _T_contra) -> _T_co: ...  # noqa: Y034
+    def __ifloordiv__(self, other: _T_contra) -> _T_co: ...
 
 # All four comparison functions must have the same signature, or we get false-positive errors
 def lt(a: _SupportsComparison, b: _SupportsComparison, /) -> Any: ...
