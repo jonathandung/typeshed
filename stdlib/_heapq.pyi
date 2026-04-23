@@ -1,5 +1,8 @@
 import sys
-from _typeshed import SupportsRichComparison, SupportsRichComparisonT as _T  # All type variable use in this module requires comparability.
+from _typeshed import (  # All type variable use in this module requires comparability.
+    SupportsRichComparison,
+    SupportsRichComparisonT as _T,
+)
 from typing import Final
 
 __about__: Final[str]
@@ -16,6 +19,7 @@ if sys.version_info >= (3, 14):
     def heappush_max(heap: list[_T], item: _T, /) -> None: ...
     def heappushpop_max(heap: list[_T], item: _T, /) -> _T: ...
     def heapreplace_max(heap: list[_T], item: _T, /) -> _T: ...
+
 else:
     def _heapify_max(heap: list[SupportsRichComparison]) -> None: ...  # undocumented
     def _heappop_max(heap: list[_T], /) -> _T: ...  # undocumented
