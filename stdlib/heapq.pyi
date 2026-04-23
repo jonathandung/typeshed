@@ -10,9 +10,6 @@ if sys.version_info >= (3, 14):
     # Added to __all__ in 3.14.1
     __all__ += ["heapify_max", "heappop_max", "heappush_max", "heappushpop_max", "heapreplace_max"]
 
-    def _heappush_max(heap: list[_T], item: _T, /) -> None: ...  # undocumented
-    def _heappushpop_max(heap: list[_T], item: _T, /) -> _T: ...  # undocumented
-
 _S = TypeVar("_S")
 
 __about__: Final[str]
@@ -29,6 +26,4 @@ def nlargest(n: int, iterable: Iterable[_T], key: None = None) -> list[_T]: ...
 def nsmallest(n: int, iterable: Iterable[_S], key: Callable[[_S], SupportsRichComparison]) -> list[_S]: ...
 @overload
 def nsmallest(n: int, iterable: Iterable[_T], key: None = None) -> list[_T]: ...
-def _heapify_max(heap: list[SupportsRichComparison]) -> None: ...  # undocumented
-def _heappop_max(heap: list[_T], /) -> _T: ...  # undocumented
-def _heapreplace_max(heap: list[_T], item: _T, /) -> _T: ...  # undocumented
+def _heapify_max(heap: list[SupportsRichComparison], /) -> None: ...  # undocumented
